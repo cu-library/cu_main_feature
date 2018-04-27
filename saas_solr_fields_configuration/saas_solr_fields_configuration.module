@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SAAS SOLR Fields Configuration feature.
+ */
+
+include_once 'saas_solr_fields_configuration.features.inc';

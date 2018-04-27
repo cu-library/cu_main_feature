@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CU main feature feature.
+ */
+
+include_once 'cu_main_feature.features.inc';
