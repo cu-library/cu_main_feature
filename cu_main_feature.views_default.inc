@@ -259,16 +259,14 @@ function cu_main_feature_views_default_views() {
   $handler->display->display_options['fields']['dc.description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['dc.description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['dc.description']['link_to_object'] = 0;
-  /* Field: Islandora Solr: Datastream Image */
-  $handler->display->display_options['fields']['tn_cache']['id'] = 'tn_cache';
-  $handler->display->display_options['fields']['tn_cache']['table'] = 'islandora_solr';
-  $handler->display->display_options['fields']['tn_cache']['field'] = 'tn_cache';
-  $handler->display->display_options['fields']['tn_cache']['label'] = '';
-  $handler->display->display_options['fields']['tn_cache']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['tn_cache']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['tn_cache']['link_to_object'] = 0;
-  $handler->display->display_options['fields']['tn_cache']['tn_dsid'] = 'OBJ';
-  $handler->display->display_options['fields']['tn_cache']['tn_style'] = 'featured_collections';
+  /* Field: Islandora Solr: PID */
+  $handler->display->display_options['fields']['PID']['id'] = 'PID';
+  $handler->display->display_options['fields']['PID']['table'] = 'islandora_solr';
+  $handler->display->display_options['fields']['PID']['field'] = 'PID';
+  $handler->display->display_options['fields']['PID']['label'] = '';
+  $handler->display->display_options['fields']['PID']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['PID']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['PID']['link_to_object'] = 0;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -279,7 +277,9 @@ function cu_main_feature_views_default_views() {
       <div class="title"><h2>[dc.title]</h2></div>
       <div class="description">[dc.description]</div>
   </div>
-  <div class="photo match-height">[tn_cache]</div>
+  <div class="photo match-height front-page-small-image">
+    <img src="/islandora/object/[PID]/datastream/TN/view"/>
+  </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Filter criterion: Islandora Solr: RELS_EXT_isMemberOfCollection_uri_mt */
@@ -304,7 +304,9 @@ function cu_main_feature_views_default_views() {
       <div class="title"><h2>[dc.title]</h2></div>
       <div class="description">[dc.description]</div>
   </div>
-  <div class="photo match-height">[tn_cache]</div>
+  <div class="photo match-height front-page-small-image">
+    <img src="/islandora/object/[PID]/datastream/TN/view"/>
+  </div>
 </div>'),
     t('Block'),
   );
@@ -532,13 +534,6 @@ function cu_main_feature_views_default_views() {
   $handler->display->display_options['fields']['PID']['exclude'] = TRUE;
   $handler->display->display_options['fields']['PID']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['PID']['link_to_object'] = 0;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['id'] = 'mods_titleInfo_subTitle_ms';
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['table'] = 'islandora_solr';
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['field'] = 'mods_titleInfo_subTitle_ms';
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['label'] = '';
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['element_label_colon'] = FALSE;
   /* Field: Islandora Solr: fgs_label_s */
   $handler->display->display_options['fields']['fgs_label_s']['id'] = 'fgs_label_s';
   $handler->display->display_options['fields']['fgs_label_s']['table'] = 'islandora_solr';
@@ -562,7 +557,7 @@ function cu_main_feature_views_default_views() {
   $handler->display->display_options['fields']['tn_cache']['table'] = 'islandora_solr';
   $handler->display->display_options['fields']['tn_cache']['field'] = 'tn_cache';
   $handler->display->display_options['fields']['tn_cache']['label'] = '';
-  $handler->display->display_options['fields']['tn_cache']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['tn_cache']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tn_cache']['alter']['text'] = '<div>
   <div class="image-background">
     [tn_cache]
@@ -581,6 +576,28 @@ function cu_main_feature_views_default_views() {
   $handler->display->display_options['fields']['tn_cache']['link_to_object'] = 0;
   $handler->display->display_options['fields']['tn_cache']['tn_dsid'] = 'OBJ';
   $handler->display->display_options['fields']['tn_cache']['tn_style'] = 'front_page_image_style';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div>
+  <div class="image-background">
+    <div class="front-page-large-image">
+      <img src="/islandora/object/[PID]/datastream/TN/view"/>
+    </div>
+    <div class="data-wrapper">
+      <div class="inner-data-wrapper">
+       <h2>[fgs_label_s]</h2>
+        <span>Explore and contribute to our online collections</span>
+        <div class="collection-link-wrapper">
+         <a title="Click here to visit our online archive" href="/islandora">Our Collections</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Islandora Solr: PID */
@@ -732,6 +749,22 @@ function cu_main_feature_views_default_views() {
     t('<div>
   <div class="image-background">
     [tn_cache]
+    <div class="data-wrapper">
+      <div class="inner-data-wrapper">
+       <h2>[fgs_label_s]</h2>
+        <span>Explore and contribute to our online collections</span>
+        <div class="collection-link-wrapper">
+         <a title="Click here to visit our online archive" href="/islandora">Our Collections</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>'),
+    t('<div>
+  <div class="image-background">
+    <div class="front-page-large-image">
+      <img src="/islandora/object/[PID]/datastream/TN/view"/>
+    </div>
     <div class="data-wrapper">
       <div class="inner-data-wrapper">
        <h2>[fgs_label_s]</h2>
