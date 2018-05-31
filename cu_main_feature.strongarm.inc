@@ -119,7 +119,7 @@ function cu_main_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'islandora_basic_collection_disable_display_generation';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['islandora_basic_collection_disable_display_generation'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -181,7 +181,7 @@ function cu_main_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'islandora_solr_collection_display_use_solr_display_profiles';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['islandora_solr_collection_display_use_solr_display_profiles'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -206,7 +206,7 @@ function cu_main_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'islandora_solr_primary_display';
-  $strongarm->value = 'enhanced-grid';
+  $strongarm->value = 'grid';
   $export['islandora_solr_primary_display'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -221,13 +221,13 @@ function cu_main_feature_strongarm() {
       'table' => '0',
       'enhanced-grid' => '1',
     ),
-    'default' => 'enhanced-grid',
+    'default' => 'grid',
     'enabled' => array(
       'bookmark' => 'bookmark',
       'default' => 'default',
-      'grid' => 'grid',
       'table' => 'table',
-      'enhanced-grid' => 'enhanced-grid',
+      'grid' => 'grid',
+      'enhanced-grid' => 0,
     ),
   );
   $export['islandora_solr_primary_display_table'] = $strongarm;
