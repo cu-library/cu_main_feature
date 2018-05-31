@@ -83,51 +83,6 @@ function cu_main_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: islandora_imagecache_image_style_large.
-  $styles['islandora_imagecache_image_style_large'] = array(
-    'label' => 'Islandora Imagecache Image Style Large Size',
-    'effects' => array(
-      27 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 3015,
-          'height' => 900,
-        ),
-        'weight' => 2,
-      ),
-    ),
-  );
-
-  // Exported image style: islandora_imagecache_image_style_medium.
-  $styles['islandora_imagecache_image_style_medium'] = array(
-    'label' => 'Islandora Imagecache Image Style Medium Size',
-    'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 185,
-          'height' => 125,
-        ),
-        'weight' => 0,
-      ),
-    ),
-  );
-
-  // Exported image style: islandora_imagecache_image_style_small.
-  $styles['islandora_imagecache_image_style_small'] = array(
-    'label' => 'Islandora Imagecache Image Style Small Size',
-    'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 210,
-          'height' => 210,
-        ),
-        'weight' => 0,
-      ),
-    ),
-  );
-
   // Exported image style: popular_resources.
   $styles['popular_resources'] = array(
     'label' => 'Popular Resources',

@@ -115,6 +115,42 @@ function cu_main_feature_default_fe_block_settings() {
     'visibility' => 1,
   );
 
+  $export['blockgroup-first_sidebar_search_blocks'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'first_sidebar_search_blocks',
+    'module' => 'blockgroup',
+    'node_types' => array(),
+    'pages' => 'islandora/search*
+islandora/object*
+islandora/search/*
+islandora/object/*',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'cu_theme' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'cu_theme',
+        'weight' => -51,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'FIrst Sidebar Search Blocks',
+    'visibility' => 1,
+  );
+
   $export['comment-recent'] = array(
     'cache' => 1,
     'css_class' => '',
@@ -148,105 +184,6 @@ function cu_main_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['dgi_saas_companion-dgi_saas_companion_res'] = array(
-    'cache' => 1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'dgi_saas_companion_res',
-    'module' => 'dgi_saas_companion',
-    'node_types' => array(),
-    'pages' => '<front>',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'cu_theme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'cu_theme',
-        'weight' => -48,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 1,
-  );
-
-  $export['dgi_saas_companion-dgi_saas_metadata_description'] = array(
-    'cache' => 1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'dgi_saas_metadata_description',
-    'module' => 'dgi_saas_companion',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'cu_theme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'cu_theme',
-        'weight' => -36,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '<none>',
-    'visibility' => 0,
-  );
-
-  $export['dgi_saas_companion-dgi_saas_metadata_markup'] = array(
-    'cache' => 1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'dgi_saas_metadata_markup',
-    'module' => 'dgi_saas_companion',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'cu_theme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'cu_theme',
-        'weight' => -37,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['islandora_bookmark-islandora_bookmark'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -267,7 +204,7 @@ function cu_main_feature_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'cu_theme',
-        'weight' => -45,
+        'weight' => -50,
       ),
       'seven' => array(
         'region' => '',
@@ -416,72 +353,6 @@ islandora/object/*',
     'visibility' => 0,
   );
 
-  $export['islandora_solr-current_query_displays'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'current_query_displays',
-    'module' => 'islandora_solr',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'cu_theme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'cu_theme',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['islandora_solr-current_query_result'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'current_query_result',
-    'module' => 'islandora_solr',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'cu_theme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'cu_theme',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['islandora_solr-display_switch'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -499,10 +370,10 @@ islandora/object/*',
         'weight' => 0,
       ),
       'cu_theme' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'content',
+        'status' => 1,
         'theme' => 'cu_theme',
-        'weight' => -39,
+        'weight' => -49,
       ),
       'seven' => array(
         'region' => '',
@@ -511,7 +382,7 @@ islandora/object/*',
         'weight' => 0,
       ),
     ),
-    'title' => '<none>',
+    'title' => 'Display',
     'visibility' => 0,
   );
 
@@ -545,39 +416,6 @@ islandora/object/*',
       ),
     ),
     'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['islandora_solr-islandora_solr_display_manager'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'islandora_solr_display_manager',
-    'module' => 'islandora_solr',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'cu_theme' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'cu_theme',
-        'weight' => -44,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '<none>',
     'visibility' => 0,
   );
 
@@ -634,10 +472,10 @@ islandora/object/*',
         'weight' => 0,
       ),
       'cu_theme' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'content',
+        'status' => 1,
         'theme' => 'cu_theme',
-        'weight' => -19,
+        'weight' => -48,
       ),
       'seven' => array(
         'region' => '',
@@ -646,7 +484,7 @@ islandora/object/*',
         'weight' => 0,
       ),
     ),
-    'title' => 'Sort',
+    'title' => 'Sort By',
     'visibility' => 0,
   );
 
@@ -1165,7 +1003,7 @@ islandora/object/*',
         'region' => 'content',
         'status' => 1,
         'theme' => 'cu_theme',
-        'weight' => -43,
+        'weight' => -47,
       ),
       'seven' => array(
         'region' => 'content',
@@ -1762,7 +1600,7 @@ islandora/search*',
         'region' => 'content',
         'status' => 1,
         'theme' => 'cu_theme',
-        'weight' => -49,
+        'weight' => -51,
       ),
       'seven' => array(
         'region' => '',

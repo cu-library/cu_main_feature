@@ -259,16 +259,14 @@ function cu_main_feature_views_default_views() {
   $handler->display->display_options['fields']['dc.description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['dc.description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['dc.description']['link_to_object'] = 0;
-  /* Field: Islandora Solr: Datastream Image */
-  $handler->display->display_options['fields']['tn_cache']['id'] = 'tn_cache';
-  $handler->display->display_options['fields']['tn_cache']['table'] = 'islandora_solr';
-  $handler->display->display_options['fields']['tn_cache']['field'] = 'tn_cache';
-  $handler->display->display_options['fields']['tn_cache']['label'] = '';
-  $handler->display->display_options['fields']['tn_cache']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['tn_cache']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['tn_cache']['link_to_object'] = 0;
-  $handler->display->display_options['fields']['tn_cache']['tn_dsid'] = 'OBJ';
-  $handler->display->display_options['fields']['tn_cache']['tn_style'] = 'featured_collections';
+  /* Field: Islandora Solr: PID */
+  $handler->display->display_options['fields']['PID']['id'] = 'PID';
+  $handler->display->display_options['fields']['PID']['table'] = 'islandora_solr';
+  $handler->display->display_options['fields']['PID']['field'] = 'PID';
+  $handler->display->display_options['fields']['PID']['label'] = '';
+  $handler->display->display_options['fields']['PID']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['PID']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['PID']['link_to_object'] = 0;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -279,7 +277,9 @@ function cu_main_feature_views_default_views() {
       <div class="title"><h2>[dc.title]</h2></div>
       <div class="description">[dc.description]</div>
   </div>
-  <div class="photo match-height">[tn_cache]</div>
+  <div class="photo match-height front-page-small-image">
+    <img src="/islandora/object/[PID]/datastream/TN/view"/>
+  </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Filter criterion: Islandora Solr: RELS_EXT_isMemberOfCollection_uri_mt */
@@ -304,7 +304,9 @@ function cu_main_feature_views_default_views() {
       <div class="title"><h2>[dc.title]</h2></div>
       <div class="description">[dc.description]</div>
   </div>
-  <div class="photo match-height">[tn_cache]</div>
+  <div class="photo match-height front-page-small-image">
+    <img src="/islandora/object/[PID]/datastream/TN/view"/>
+  </div>
 </div>'),
     t('Block'),
   );
@@ -532,13 +534,6 @@ function cu_main_feature_views_default_views() {
   $handler->display->display_options['fields']['PID']['exclude'] = TRUE;
   $handler->display->display_options['fields']['PID']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['PID']['link_to_object'] = 0;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['id'] = 'mods_titleInfo_subTitle_ms';
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['table'] = 'islandora_solr';
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['field'] = 'mods_titleInfo_subTitle_ms';
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['label'] = '';
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['mods_titleInfo_subTitle_ms']['element_label_colon'] = FALSE;
   /* Field: Islandora Solr: fgs_label_s */
   $handler->display->display_options['fields']['fgs_label_s']['id'] = 'fgs_label_s';
   $handler->display->display_options['fields']['fgs_label_s']['table'] = 'islandora_solr';
@@ -562,7 +557,7 @@ function cu_main_feature_views_default_views() {
   $handler->display->display_options['fields']['tn_cache']['table'] = 'islandora_solr';
   $handler->display->display_options['fields']['tn_cache']['field'] = 'tn_cache';
   $handler->display->display_options['fields']['tn_cache']['label'] = '';
-  $handler->display->display_options['fields']['tn_cache']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['tn_cache']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tn_cache']['alter']['text'] = '<div>
   <div class="image-background">
     [tn_cache]
@@ -581,6 +576,28 @@ function cu_main_feature_views_default_views() {
   $handler->display->display_options['fields']['tn_cache']['link_to_object'] = 0;
   $handler->display->display_options['fields']['tn_cache']['tn_dsid'] = 'OBJ';
   $handler->display->display_options['fields']['tn_cache']['tn_style'] = 'front_page_image_style';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div>
+  <div class="image-background">
+    <div class="front-page-large-image">
+      <img src="/islandora/object/[PID]/datastream/TN/view"/>
+    </div>
+    <div class="data-wrapper">
+      <div class="inner-data-wrapper">
+       <h2>[fgs_label_s]</h2>
+        <span>Explore and contribute to our online collections</span>
+        <div class="collection-link-wrapper">
+         <a title="Click here to visit our online archive" href="/islandora">Our Collections</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Islandora Solr: PID */
@@ -732,6 +749,22 @@ function cu_main_feature_views_default_views() {
     t('<div>
   <div class="image-background">
     [tn_cache]
+    <div class="data-wrapper">
+      <div class="inner-data-wrapper">
+       <h2>[fgs_label_s]</h2>
+        <span>Explore and contribute to our online collections</span>
+        <div class="collection-link-wrapper">
+         <a title="Click here to visit our online archive" href="/islandora">Our Collections</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>'),
+    t('<div>
+  <div class="image-background">
+    <div class="front-page-large-image">
+      <img src="/islandora/object/[PID]/datastream/TN/view"/>
+    </div>
     <div class="data-wrapper">
       <div class="inner-data-wrapper">
        <h2>[fgs_label_s]</h2>
@@ -1575,175 +1608,6 @@ function cu_main_feature_views_default_views() {
     t('Block'),
   );
   $export['social_media_links'] = $view;
-
-  $view = new view();
-  $view->name = 'top_facet_searches';
-  $view->description = 'Google Analytics integration, top facet searches';
-  $view->tag = 'islandora';
-  $view->base_table = 'google_analytics';
-  $view->human_name = 'Top Facet Searches';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Top Facet Searches';
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'searchCategory' => 'searchCategory',
-    'searchResultViews' => 'searchResultViews',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'searchCategory' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'searchResultViews' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  /* Field: Internal search dimensions: Site Search Category */
-  $handler->display->display_options['fields']['facet']['id'] = 'facet';
-  $handler->display->display_options['fields']['facet']['table'] = 'google_analytics';
-  $handler->display->display_options['fields']['facet']['field'] = 'searchCategory';
-  $handler->display->display_options['fields']['facet']['label'] = 'Facet Terms';
-  $handler->display->display_options['fields']['facet']['alter']['path'] = '[facet]';
-  /* Field: Internal search metrics: Results Pageviews */
-  $handler->display->display_options['fields']['pageviews']['id'] = 'searchResultViews';
-  $handler->display->display_options['fields']['pageviews']['table'] = 'google_analytics';
-  $handler->display->display_options['fields']['pageviews']['field'] = 'searchResultViews';
-  $handler->display->display_options['fields']['pageviews']['label'] = '# of Searches';
-  /* Sort criterion: Internal search metrics: Results Pageviews */
-  $handler->display->display_options['sorts']['searchResultViews']['id'] = 'searchResultViews';
-  $handler->display->display_options['sorts']['searchResultViews']['table'] = 'google_analytics';
-  $handler->display->display_options['sorts']['searchResultViews']['field'] = 'searchResultViews';
-  $handler->display->display_options['sorts']['searchResultViews']['order'] = 'DESC';
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $translatables['top_facet_searches'] = array(
-    t('Master'),
-    t('Top Facet Searches'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Facet Terms'),
-    t('# of Searches'),
-    t('.'),
-    t(','),
-    t('Block'),
-  );
-  $export['top_facet_searches'] = $view;
-
-  $view = new view();
-  $view->name = 'top_site_searches';
-  $view->description = 'Google Analytics integration, top site searches';
-  $view->tag = 'islandora';
-  $view->base_table = 'google_analytics';
-  $view->human_name = 'Top Site Searches';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Top Site Searches';
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '14';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'searchKeyword' => 'searchKeyword',
-    'searchResultViews' => 'searchResultViews',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'searchKeyword' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'searchResultViews' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  /* Field: Internal search dimensions: Search Term */
-  $handler->display->display_options['fields']['search']['id'] = 'searchKeyword';
-  $handler->display->display_options['fields']['search']['table'] = 'google_analytics';
-  $handler->display->display_options['fields']['search']['field'] = 'searchKeyword';
-  $handler->display->display_options['fields']['search']['label'] = 'Search Terms';
-  /* Field: Internal search metrics: Results Pageviews */
-  $handler->display->display_options['fields']['pageviews']['id'] = 'searchResultViews';
-  $handler->display->display_options['fields']['pageviews']['table'] = 'google_analytics';
-  $handler->display->display_options['fields']['pageviews']['field'] = 'searchResultViews';
-  $handler->display->display_options['fields']['pageviews']['label'] = '# of Searches';
-  /* Sort criterion: Internal search metrics: Results Pageviews */
-  $handler->display->display_options['sorts']['searchResultViews']['id'] = 'searchResultViews';
-  $handler->display->display_options['sorts']['searchResultViews']['table'] = 'google_analytics';
-  $handler->display->display_options['sorts']['searchResultViews']['field'] = 'searchResultViews';
-  $handler->display->display_options['sorts']['searchResultViews']['order'] = 'DESC';
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: Text area */
-  $handler->display->display_options['empty']['area']['id'] = 'area';
-  $handler->display->display_options['empty']['area']['table'] = 'views';
-  $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['label'] = 'Top Site Searches';
-  $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'You need to configure Google Analytics to show the Top Site Searches';
-  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  $translatables['top_site_searches'] = array(
-    t('Master'),
-    t('Top Site Searches'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Search Terms'),
-    t('# of Searches'),
-    t('.'),
-    t(','),
-    t('Block'),
-    t('You need to configure Google Analytics to show the Top Site Searches'),
-  );
-  $export['top_site_searches'] = $view;
 
   $view = new view();
   $view->name = 'trending';
